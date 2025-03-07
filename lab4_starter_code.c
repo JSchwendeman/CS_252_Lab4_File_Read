@@ -143,6 +143,11 @@ void search_by_string(unsigned char *buffer, size_t size) {
 	// allocate memory for user input
 	char* inputString = (char*)malloc(size*sizeof(unsigned char));
 	
+    if (!inputString) {
+        printf("Error: Memory Allocation failed");
+        return;
+    }
+
 	// Block until valid input string
 	int len = -1;
 	while(1) {
